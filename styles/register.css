@@ -1,0 +1,36 @@
+.container{
+    margin: auto;
+    margin-top: 10%;
+    width: 20%;
+    border: 2px solid black;
+}
+
+.container h1{
+    display: flex;
+    justify-content: center;
+}
+
+.container .form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    padding: 10%
+}
+
+.container .form input{
+    margin: 2% 0 10% 0;
+}
+
+.container .form .submitBtn{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.container .form div{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
