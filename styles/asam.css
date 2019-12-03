@@ -1,0 +1,35 @@
+.main-page{
+    background-color: blanchedalmond;
+    padding-top: 5%;
+    display: flex;
+    justify-content:center;
+}
+
+.classA{
+    background-color: aqua;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.classB{
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    margin-top: -10px;
+    padding: 30px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.classC{
+    background-color: blueviolet;
+    width: 100px;
+    height: 100px;
+}
+
+.classD{
+    background-color: greenyellow;
+    width: 100px;
+    height: 100px;
+}

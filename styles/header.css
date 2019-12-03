@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+nav {
+    margin:auto;
+    text-align: center;
+    width: 100%;
+} 
+
+nav ul ul {
+    display: none;
+}
+
+nav ul li:hover > ul{
+    display: block;
+    width: 5%;
+}
+
+nav ul {
+    background: #1de70a;
+    padding: 0 20px;
+    list-style: none;
+    position: relative;
+    display: inline-table;
+    width: 100%;
+}
+
+nav ul:after {
+    content: ""; 
+    clear:both; 
+    display: block;
+}
+
+nav ul li{
+    float:left;
+}
+
+nav ul li:hover{
+    background:aqua;
+}
+
+nav ul li a{
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul ul{
+    background: #1de70a;
+    border-radius: 0px;
+    padding: 0;
+    position: absolute;
+    top:100%;
+}
+
+nav ul ul li{
+    float: none;
+    position: relative;
+}
+
+nav ul ul li a{
+    padding: 10px;
+    color: #fff;
+}
+
+nav ul ul li a:hover{
+    background-color: aqua;
+}
+
+nav ul ul ul{
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+.logRes{
+    margin-right: 2%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header nav{
+    position: fixed;
+}
