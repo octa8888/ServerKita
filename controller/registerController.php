@@ -27,6 +27,7 @@ if(isset($_POST['submitButton'])){
     else{
         // echo "Register";
         $userid=md5($username.$password);
+        $password=md5($password);
         $query=$con->prepare("INSERT INTO KUser VALUES(?,?,?,?,?)");
         $query->bind_param("sssss",$userid,$username,$password,$dob,$email);
         $query->execute();
