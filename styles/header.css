@@ -20,12 +20,11 @@ nav ul ul {
 
 nav ul li:hover > ul{
     display: block;
-    width: 5%;
+    width: 10%;
 }
 
 nav ul {
     background: #1de70a;
-    padding: 0 20px;
     list-style: none;
     position: relative;
     display: inline-table;
