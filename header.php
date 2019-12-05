@@ -46,7 +46,7 @@
                     </li>
                 </div>
                 <div class="logRes">
-                    <li> <a href="">Login</a></li>
+                    <li> <a href="login.php">Login</a></li>
                     <li> <a href="register.php">Register</a></li>
                 </div>
             </ul>

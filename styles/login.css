@@ -1,0 +1,26 @@
+.container{
+    margin: auto;
+    position: relative;
+    top: 100px;
+    width: 20%;
+    border: 2px solid black;
+    padding: 2%;
+}
+
+.input-form{
+    display: block;
+    width: 95%;
+}
+
+.label{
+    margin-top: 30px;
+}
+
+div{
+    margin-left: 1%;
+}
+
+.submit-btn{
+    display: block;
+    margin: 30px auto 10px;
+}

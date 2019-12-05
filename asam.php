@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php
-        include('header.html');
+        include('header.php');
     ?>
     <div class="main-page">
         <div class="classA">A</div>    

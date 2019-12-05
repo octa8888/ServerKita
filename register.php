@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="styles/register.css">
 </head>
 <body>
+
+    <?php
+        include('header.php');
+    ?>
+
     <div class="container">
         <h1>Register</h1>
         <form action="controller/registerController.php" method="POST" class="form">

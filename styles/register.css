@@ -1,6 +1,7 @@
 .container{
     margin: auto;
-    margin-top: 10%;
+    position: relative;
+    top: 100px;
     width: 20%;
     border: 2px solid black;
 }
