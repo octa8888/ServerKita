@@ -21,8 +21,6 @@
         $query->execute();
         $rs=$query->get_result();
         if($rs->num_rows==1){
-            echo $rs->num_rows;
-            die();
             $rs=$rs->fetch_assoc();
             session_start();
             $_SESSION['username']=$username;

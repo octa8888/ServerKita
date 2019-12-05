@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Toko Kimia</title>
+    <title>Komputer</title>
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div style="text-align:center">
+    <div style="text-align:center; margin-top:20px">
         <span class="dot" onclick="showSlide(0);"></span>
         <span class="dot" onclick="showSlide(1);"></span>
     </div>
