@@ -17,12 +17,12 @@
             <div class="label">
                 Username
             </div>
-            <input type="text" name="txtUsername" class="input-form">
+            <input type="text" name="username" class="input-form">
             <div class="label">
                 Password
             </div>
-            <input type="password" name="txtUsername" class="input-form">
-            <input type="submit" value="Login" class="submit-btn">
+            <input type="password" name="password" class="input-form">
+            <input type="submit" value="Login" name="submitBtn" class="submit-btn">
         </form>
     </div>
 </body>

@@ -46,9 +46,21 @@
                     </li>
                 </div>
                 <div class="logRes">
-                    <li> <a href="login.php">Login</a></li>
-                    <li> <a href="register.php">Register</a></li>
+                <?php
+                    session_start();
+                    
+                    if(isset($_SESSION['username'])){
+                        $html="<li> <a href='controller/logoutController.php'>Logout</a></li>";
+                        echo $html;
+                    }
+                    else{
+                        $html="<li> <a href='login.php'>Login</a></li>
+                                <li> <a href='register.php'>Register</a></li>";
+                        echo $html;
+                    }
+                ?>
                 </div>
+                
             </ul>
         </nav>
     </header>
