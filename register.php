@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/register.css">
 </head>
 <body>
@@ -26,7 +27,7 @@
             <input type="password" name="password">
             Retype your password
             <input type="password" name="password2">
-            <input type="submit" value="Register" class="submitBtn" name="submitButton">
+            <input type="submit" value="Register" class="submitBtn btn-primary btn" name="submitButton">
             <div>
                 <?php
                     if(isset($_GET['error'])){
