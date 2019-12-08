@@ -1,35 +1,50 @@
-.main-page{
-    background-color: blanchedalmond;
-    padding-top: 5%;
+body{
+    background-color: whitesmoke;
+}
+
+.container{
+    margin: auto;
+    position: relative;
+    top: 100px;
+    width: 100%;
+    z-index: 1;
+}
+
+.row{
     display: flex;
-    justify-content:center;
+    justify-content: center;
 }
 
-.classA{
-    background-color: aqua;
-    width: 300px;
-    height: 300px;
-    margin-bottom: 30px;
+header{
+    z-index: 10;
 }
 
-.classB{
-    background-color: blue;
-    width: 200px;
-    height: 200px;
-    margin-top: -10px;
-    padding: 30px;
+.img-setting{
+    width: 100%;
+    border-radius: 2% 2% 0 ;
+}
+
+.description{
+    text-align: justify;
+    margin: 20px;
+}
+
+.cart-button{
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 15px 20px 0;
+    padding-top: 20px;
+}
+
+.shop-item{
+    background-color: white;
+    border-radius: 2%;
     box-sizing: border-box;
-    color: white;
+    padding: 0 0 20px;
+    margin: 0 20px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.classC{
-    background-color: blueviolet;
-    width: 100px;
-    height: 100px;
-}
+.shop-item:hover{
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
 
-.classD{
-    background-color: greenyellow;
-    width: 100px;
-    height: 100px;
 }

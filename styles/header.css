@@ -86,6 +86,7 @@ nav ul ul ul{
     justify-content: flex-end;
 }
 
-header nav{
+header{
     position: fixed;
+    width: 100%;
 }
