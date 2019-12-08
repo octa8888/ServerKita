@@ -22,51 +22,43 @@
         <script>
             $("document").ready(function(){
                 $.ajax({
-                    url:'http://localhost:8080/ServerKita/controller/apiStore.php',
-                    dataType:'json',
-                    type:'POST',
+                    url: "http://localhost:8080/ServerKita/controller/apiStore.php",
+                    dataType: 'json',
+                    type: 'POST',
                     data:{
                         action:'getStoreItems'
                     },
                     success: function (data){
-                        
+                        // console.log(data);
+                        var html="";
+                        $.each(data,function(index, item){
+                            html+=`<div class="col-lg-3 shop-item">
+                                <img src='${item.Picture}' class="img-setting">
+                                <div class="description">
+                                    <h5>${item.Name}</h5>
+                                    <div>
+                                        ${item.Description}
+                                    </div>
+                                    <div style="margin-top: 10px; color:orange">
+                                        <strong>Rp. ${item.Price}</strong>
+                                    </div>
+                                </div>
+                                <div class="cart-button">
+                                    <button class="btn btn-danger">Buy</button>
+                                </div>
+                            </div>`
+                        });
+                        $(".row").html(html);
                     },
-                    error: function(){
-                        alert('error');
+                    error: function(e){
+                        alert("error");
                     }
                 });
             })
             
         </script>
-         <?php
-            $query="SELECT * FROM KItems";
-            if($rs=$con->query($query)){
-                while($data=$rs->fetch_assoc()){
-        ?>
-            <div class="row">
-                <div class="col-lg-3 shop-item">
-                    <img src="<?=$data['Picture']?>" class="img-setting">
-                    <div class="description">
-                        <h5><?=$data['Name']?></h5>
-                        <div>
-                            <?=$data['Description']?>
-                        </div>
-                        <div style="margin-top: 10px; color:orange">
-                            <strong>Rp. <?=$data['Price']?></strong>
-                        </div>
-                    </div>
-                    <div class="cart-button">
-                        <button class="btn btn-danger">Buy</button>
-                    </div>
-                </div>
-            </div>
 
-        <?php  
-                } 
-            }
-        ?>
-
-        
+    <div class="row"></div>
 
     </div>
     
