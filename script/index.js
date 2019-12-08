@@ -18,5 +18,5 @@ function slideAuto(maxSlide){
 
 showSlide(0);
 
-setInterval(slideAuto,2500,1);
+setInterval(slideAuto,5000,5);
 

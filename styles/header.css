@@ -24,7 +24,7 @@ nav ul li:hover > ul{
 }
 
 nav ul {
-    background: #1de70a;
+    background: linear-gradient(#ff13ff,aqua, green);
     list-style: none;
     position: relative;
     display: inline-table;
@@ -48,7 +48,7 @@ nav ul li:hover{
 nav ul li a{
     display: block;
     padding: 15px;
-    color: #fff;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -67,7 +67,7 @@ nav ul ul li{
 
 nav ul ul li a{
     padding: 10px;
-    color: #fff;
+    color: #000000;
 }
 
 nav ul ul li a:hover{
