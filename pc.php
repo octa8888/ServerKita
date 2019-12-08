@@ -19,9 +19,25 @@
     
     <div class="container">
         
-        
-
-
+        <script>
+            $("document").ready(function(){
+                $.ajax({
+                    url:'http://localhost:8080/ServerKita/controller/apiStore.php',
+                    dataType:'json',
+                    type:'POST',
+                    data:{
+                        action:'getStoreItems'
+                    },
+                    success: function (data){
+                        
+                    },
+                    error: function(){
+                        alert('error');
+                    }
+                });
+            })
+            
+        </script>
          <?php
             $query="SELECT * FROM KItems";
             if($rs=$con->query($query)){
