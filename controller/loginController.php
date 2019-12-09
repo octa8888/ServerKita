@@ -24,6 +24,7 @@
             $rs=$rs->fetch_assoc();
             session_start();
             $_SESSION['username']=$username;
+            $_SESSION['userId']=$rs['UserId'];
             header("location: ../index.php");
         }
         else{

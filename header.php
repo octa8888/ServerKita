@@ -13,25 +13,25 @@
                                 <a href="pc.php">Komputer</a>
                             </li>
                             <li>
-                                <a href="">Laptop</a>
+                                <a href="laptop.php">Laptop</a>
                             </li>
                         </ul>
                     </li>
                     <li> <a href="">Aksesoris</a>
                         <ul>
                             <li>
-                                <a href="">List1</a>
+                                <a href="">Headset</a>
                             </li>
                             <li>
-                                <a href="">List2</a>
+                                <a href="">Mouse</a>
                             </li>
                             <li>
-                                <a href="">List3</a>
+                                <a href="">Keyboard</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Cart</a>
+                        <a href="cart.php">Cart</a>
                     </li>
                 </div>
                 

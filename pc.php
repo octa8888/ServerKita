@@ -16,9 +16,8 @@
         include('header.php');
     ?>
     <script src="script/jquery.min.js"></script>
-    
+    <script src="script/buy.js"></script>
     <div class="container">
-        
         <script>
             $("document").ready(function(){
                 $.ajax({
@@ -26,10 +25,13 @@
                     dataType: 'json',
                     type: 'POST',
                     data:{
-                        action:'getStoreItems'
+                        action:'getStoreItems',
+                        type: 'Computer'
                     },
                     success: function (data){
-                        // console.log(data);
+                        if(data=="Invalid Type"){
+                            header("location: index.php");
+                        }
                         var html="";
                         $.each(data,function(index, item){
                             html+=`<div class="col-lg-3 shop-item">
@@ -43,15 +45,21 @@
                                         <strong>Rp. ${item.Price}</strong>
                                     </div>
                                 </div>
+                            <?php
+                                if(isset($_SESSION['username'])){
+                            ?>
                                 <div class="cart-button">
-                                    <button class="btn btn-danger">Buy</button>
+                                    <button class="btn btn-danger" onclick=buyById(${item.ItemId},'<?=$_SESSION['userId']?>')>Buy</button>
                                 </div>
+                            <?php
+                                }
+                            ?>
                             </div>`
                         });
                         $(".row").html(html);
                     },
                     error: function(e){
-                        alert("error");
+                       window.location="index.php";
                     }
                 });
             })
