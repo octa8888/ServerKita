@@ -13,6 +13,7 @@
 </head>
 <body>
     <script src="script/jquery.min.js"></script>
+    <script src="script/buy.js"></script>
     <div class="container">
         <div class="table-data">
             <table class="table table-dark">
@@ -36,28 +37,44 @@
                         },
                         success: function(data){
                             var html="";
+                            var total=0,totalQty=0;
                             $.each(data,function(index,item){
                                 var totalPrice=item.Price*item.Quantity;
+                                total+=totalPrice;
+                                totalQty+=item.Quantity;
                                 html+=`
                                 <tr>
                                     <th scope="row">${index+1}</th>
                                     <td>${item.Name}</td>
                                     <td>${item.Quantity}</td>
-                                    <td>${totalPrice}</td>
+                                    <td>Rp. ${totalPrice}</td>
                                 </tr>
                                 `
                             });
+                            if(data.length>0){
+                                html+=`
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td>Grand Total</td>
+                                    <td>${totalQty}</td>
+                                    <td>Rp. ${total}</td>
+                                </tr>
+                                `
+                            }
                             $('.table-body').html(html);
+                            if(data.length>0){
+                                var html = `<button class="btn btn-primary" onclick="doTransaction('<?=$_SESSION['userId']?>')">Buy</button>
+                                <button class="btn btn-danger">Cancel</button>`
+                                $('.choose-button').html(html);
+                            }
                         }
                     });
+                    
                 </script>
                 </tbody>
             </table>
         </div>
-        <div class="choose-button">
-            <button class="btn btn-primary">Buy</button>
-            <button class="btn btn-danger">Cancel</button>
-        </div>
+        <div class="choose-button"></div>
     </div>
 </body>
 </html>

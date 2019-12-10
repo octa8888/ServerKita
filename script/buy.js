@@ -1,7 +1,6 @@
 function buyById(itemId, userId){
-    // alert(itemId);
     $.ajax({
-        url: 'http://localhost:8080/ServerKita/controller/apiCart.php',
+        url: 'controller/apiCart.php',
         type: 'POST',
         data: {
             action: 'addToCart',
@@ -13,6 +12,21 @@ function buyById(itemId, userId){
         },
         error: function(){
             alert('.....');
+        }
+    });
+}
+
+function doTransaction(customerId){
+    $.ajax({
+        url: 'controller/transactionController.php',
+        type: 'POST',
+        data: {
+            action: 'doTransaction',
+            userId: customerId
+        },
+        success : function(){
+            alert("Success");
+            document.location.href="index.php";
         }
     });
 }
