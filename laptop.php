@@ -23,7 +23,7 @@
         <script>
             $("document").ready(function(){
                 $.ajax({
-                    url: "http://localhost:8080/ServerKita/controller/apiStore.php",
+                    url: "controller/apiStore.php",
                     dataType: 'json',
                     type: 'POST',
                     data:{
@@ -51,7 +51,7 @@
                                     if(isset($_SESSION['username'])){
                                 ?>
                                     <div class="cart-button">
-                                        <button class="btn btn-danger" onclick=buyById(${item.ItemId})>Buy</button>
+                                        <button class="btn btn-danger" onclick=buyById(${item.ItemId},'<?=$_SESSION['userId']?>')>Buy</button>
                                     </div>
                                 <?php
                                     }

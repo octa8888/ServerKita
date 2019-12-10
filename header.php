@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <head><link rel="stylesheet" href="styles/header.css"></head>
 <body>
     <header>
@@ -30,9 +33,15 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="cart.php">Cart</a>
-                    </li>
+                    <?php
+                        if(isset($_SESSION['username'])){
+                    ?> 
+                        <li>
+                            <a href="cart.php">Cart</a>
+                        </li>
+                    <?php
+                        }
+                    ?>
                 </div>
                 
                 <div class="logRes">
@@ -40,8 +49,6 @@
                 <li> <a href="#">About</a></li>
 
                 <?php
-                    session_start();
-                    
                     if(isset($_SESSION['username'])){
                         $html="<li> <a href='controller/logoutController.php'>Logout</a></li>";
                         echo $html;

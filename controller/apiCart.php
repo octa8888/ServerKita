@@ -26,5 +26,18 @@
             $query->execute();
             echo "Success";
         }
+        else if($_POST['action']=="getCartData"){
+            $userId=$_POST['userId'];
+            $query=$con->prepare('SELECT kc.ItemId,ki.Name,ki.Price,kc.Quantity FROM KCart kc JOIN KItems ki ON kc.Itemid = ki.ItemId Where CustomerId = ?');
+            $query->bind_param("s",$userId);
+            $query->execute();
+            if($rs=$query->get_result()){
+                $rows=array();
+                while($item=$rs->fetch_assoc()){
+                    $rows[]=$item;
+                }
+                echo json_encode($rows);
+            }
+        }
     }
 ?>

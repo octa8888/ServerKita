@@ -21,7 +21,7 @@
         <script>
             $("document").ready(function(){
                 $.ajax({
-                    url: "http://localhost:8080/ServerKita/controller/apiStore.php",
+                    url: "controller/apiStore.php",
                     dataType: 'json',
                     type: 'POST',
                     data:{
