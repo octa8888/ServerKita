@@ -26,7 +26,7 @@ function doTransaction(customerId){
         },
         success : function(){
             alert("Success");
-            document.location.href="index.php";
+            document.location.href="userUpload.php";
         }
     });
 }
