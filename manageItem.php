@@ -48,7 +48,7 @@
                                     <td>${item.Type}</td>
                                     <td>
                                         <button class="btn btn-warning")">Update</button>
-                                        <button class="btn btn-danger" onclick=doDelete('${item.ItemId}')>Delete</button>
+                                        <button class="btn btn-danger" onclick="doDelete('${item.ItemId}')">Delete</button>
                                     </td>
                                 </tr>
                                 `
