@@ -23,13 +23,13 @@
                     <li> <a href="">Aksesoris</a>
                         <ul>
                             <li>
-                                <a href="">Headset</a>
+                                <a href="headset.php">Headset</a>
                             </li>
                             <li>
-                                <a href="">Mouse</a>
+                                <a href="mouse.php">Mouse</a>
                             </li>
                             <li>
-                                <a href="">Keyboard</a>
+                                <a href="keyboard.php">Keyboard</a>
                             </li>
                         </ul>
                     </li>
@@ -46,7 +46,13 @@
                 
                 <div class="logRes">
 
-                <li> <a href="#">About</a></li>
+                <?php
+                    if(isset($_SESSION['userId'])&&$_SESSION['userId']=='administrator_account'){
+                        ?>
+                        <li> <a href="manageItem.php">Manage Item</a></li>
+                        <?php
+                    }
+                ?>
 
                 <?php
                     if(isset($_SESSION['username'])){

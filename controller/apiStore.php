@@ -4,11 +4,16 @@
         if(isset($_POST['action'])){
             if($_POST['action']=="getStoreItems"){
                 $type=$_POST['type'];
-                if($type!="Laptop"&&$type!="Computer"){
-                    echo "Invalid Type";
+                $query;
+                if($type=='All'){
+                    $query=$con->prepare("SELECT * FROM KItems ORDER BY Type, Name");
                 }
-                $query="SELECT * FROM KItems WHERE Type = '".$type."'";
-                if($rs=$con->query($query)){
+                else{
+                    $query=$con->prepare("SELECT * FROM KItems WHERE Type = ? AND Quantity > 0");
+                    $query->bind_param("s",$type);
+                }
+                $query->execute();
+                if($rs=$query->get_result()){
                     $rows=array();
                     while($item=$rs->fetch_assoc()){
                         $rows[]=$item;
