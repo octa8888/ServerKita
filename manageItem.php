@@ -1,5 +1,8 @@
 <?php
     include('header.php');
+    if(!isset($_SESSION['userId'])||$_SESSION['userId']!='administrator_account'){
+        header("location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
