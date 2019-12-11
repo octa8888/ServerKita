@@ -1,9 +1,14 @@
-function doDelete(itemId){
+function doDelete(itemID){
     $.ajax({
         url: 'controller/itemController.php',
         type: 'POST',
         data :{
-            
+            action: 'deleteItem',
+            itemId: itemID
+        },
+        success: function(data){
+            alert(data);
+            window.location.reload();
         }
     });
 }
