@@ -6,8 +6,8 @@ function doDelete(itemID){
             action: 'deleteItem',
             itemId: itemID
         },
-        success: function(data){
-            alert(data);
+        success: function(){
+            alert("Success");
             window.location.reload();
         }
     });

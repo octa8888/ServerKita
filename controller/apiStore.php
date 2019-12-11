@@ -6,7 +6,7 @@
                 $type=$_POST['type'];
                 $query;
                 if($type=='All'){
-                    $query=$con->prepare("SELECT * FROM KItems ORDER BY Type, Name");
+                    $query=$con->prepare("SELECT * FROM KItems WHERE Status = 'Active' ORDER BY Type, Name");
                 }
                 else{
                     $query=$con->prepare("SELECT * FROM KItems WHERE Type = ? AND Quantity > 0");
