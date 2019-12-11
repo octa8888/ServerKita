@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Komputer</title>
     <link rel="stylesheet" href="styles/index.css">
-    
+    <link rel="stylesheet" href="styles/redirector.css"> 
 </head>
 <style>
     body{
@@ -14,6 +15,40 @@
     background-size : auto;
     background-repeat: no-repeat;
 }
+
+h2{
+    text-align : center;
+    color: white;
+    animation-name: promo;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    margin-top: 45px;
+}
+@keyframes promo{
+    0% {background-color: #000000;}
+    5% {background-color: #500000;}
+    10% {background-color: #005000;}
+    15% {background-color: #000050;}
+    20% {background-color: #000000;}
+    25% {background-color: #500000;}
+    30% {background-color: #005000;}
+    35% {background-color: #000050;}
+    40% {background-color: #000000;}
+    45% {background-color: #500000;}
+    50% {background-color: #005000;}
+    55% {background-color: #000050;}
+    60% {background-color: #000000;}
+    65% {background-color: #500000;}
+    70% {background-color: #005000;}
+    75% {background-color: #000050;}
+    80% {background-color: #000000;}
+    85% {background-color: #500000;}
+    90% {background-color: #005000;}
+    95% {background-color: #000050;}
+    100% {background-color: #000000;}
+    
+}
+
 </style>
 <body>
     <?php
@@ -40,6 +75,8 @@
             <img src="./assets/laptop3.jpg" class="pic">
         </div>
     </div>
+<h2>Today's Our Top Electronic Stuffs!!!</h2>
+  
 
 
 
@@ -53,14 +90,7 @@
     </div>
 
     <footer>
-        <div class="Promo-Pictures">
-            <div class="Deskripsi">
-
-            
-            </div>
-
-        </div>
-    </footer>
+        
 
 
     <script src="./script/index.js"></script>
