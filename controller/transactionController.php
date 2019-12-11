@@ -21,6 +21,9 @@ if(isset($_POST['action'])&&$_POST['action']=="doTransaction"){
             $q=$con->prepare("INSERT INTO KTransactionDetail(TransactionId,ItemId, Quantity) VALUES (?,?,?)");
             $q->bind_param("iss",$headerId, $item['ItemId'],$item['Quantity']);
             $q->execute();
+            $stockQ=$con->prepare("UPDATE KItems SET Quantity=Quantity-? WHERE ItemId = ?");
+            $stockQ->bind_param("ii",$item['Quantity'],$item['ItemId']);
+            $stockQ->execute();
         }
     }
     $query=$con->prepare("DELETE FROM KCart WHERE CustomerId = ?");

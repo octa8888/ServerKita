@@ -64,7 +64,7 @@
                             $('.table-body').html(html);
                             if(data.length>0){
                                 var html = `<button class="btn btn-primary" onclick="doTransaction('<?=$_SESSION['userId']?>')">Buy</button>
-                                <button class="btn btn-danger">Cancel</button>`
+                                <button class="btn btn-danger" onclick="clearCart('<?=$_SESSION['userId']?>')">Cancel</button>`
                                 $('.choose-button').html(html);
                             }
                         }

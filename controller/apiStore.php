@@ -16,6 +16,9 @@
                 if($rs=$query->get_result()){
                     $rows=array();
                     while($item=$rs->fetch_assoc()){
+                        $item['Name']=htmlspecialchars($item['Name']);
+                        $item['Type']=htmlspecialchars($item['Type']);
+                        $item['Description']=htmlspecialchars($item['Description']);
                         $rows[]=$item;
                     }
                     echo json_encode($rows);

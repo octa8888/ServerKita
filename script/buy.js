@@ -30,3 +30,18 @@ function doTransaction(customerId){
         }
     });
 }
+
+function clearCart(customerId){
+    $.ajax({
+        url: 'controller/apiCart.php',
+        type: 'POST',
+        data: {
+            action: 'clearCart',
+            userId: customerId
+        },
+        success : function(){
+            alert("Success");
+            window.location.reload();
+        }
+    });
+}
