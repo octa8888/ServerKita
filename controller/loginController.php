@@ -1,4 +1,5 @@
 <?php
+    header("X-XSS-Protection: 0");
     if(!isset($_POST['submitBtn'])){
         header("location: ../index.php");
     }
@@ -31,5 +32,5 @@
             header("location: ../login.php");
         }
     }
-
+    
 ?>
