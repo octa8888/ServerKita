@@ -47,7 +47,7 @@
                                     <td>Rp. ${item.Price}</td>
                                     <td>${item.Type}</td>
                                     <td>
-                                        <button class="btn btn-warning")">Update</button>
+                                        <button class="btn btn-warning" onclick="updateItem('${item.ItemId}','${item.Name}','${item.Quantity}','${item.Price}','${item.Description}','${item.Type}')">Update</button>
                                         <button class="btn btn-danger" onclick="doDelete('${item.ItemId}')">Delete</button>
                                     </td>
                                 </tr>
@@ -61,32 +61,40 @@
                 </tbody>
             </table>
             <div>
+                <div class="form-group item-id-form" style="display: none;">
+                    <label>Item ID:</label>
+                    <input type="number" class="form-control" name="itemId" id="itemId" readonly>
+                </div>
                 <div class="form-group">
                     <label>Name:</label>
-                    <input type="text" class="form-control" name="itemName">
+                    <input type="text" class="form-control" name="itemName" id="itemName">
                 </div>
                 <div class="form-group">
                     <label>Quantity:</label>
-                    <input type="number" class="form-control" name="itemQuantity">
+                    <input type="number" class="form-control" name="itemQuantity" id="itemQuantity">
                 </div>
                 <div class="form-group">
                     <label>Price:</label>
-                    <input type="number" class="form-control" name="itemQuantity">
+                    <input type="number" class="form-control" name="itemPrice" id="itemPrice">
                 </div>
                 <div class="form-group">
                     <label>Description:</label>
-                    <input type="text" class="form-control" name="itemQuantity">
+                    <input type="text" class="form-control" name="itemDescription" id="itemDescription">
                 </div>
                 <div class="form-group">
                     <label>Type:</label><br>
-                    <input type="radio" name="itemType" value="Computer"> Computer <br>
-                    <input type="radio" name="itemType" value="Laptop"> Laptop <br>
-                    <input type="radio" name="itemType" value="Mouse"> Mouse <br>
-                    <input type="radio" name="itemType" value="Headset"> Headset <br>
-                    <input type="radio" name="itemType" value="Keyboard"> Keyboard <br>
+                    <input type="radio" name="itemType" value="Computer" id="Computer"> Computer <br>
+                    <input type="radio" name="itemType" value="Laptop" id="Laptop"> Laptop <br>
+                    <input type="radio" name="itemType" value="Mouse" id="Mouse"> Mouse <br>
+                    <input type="radio" name="itemType" value="Headset" id="Headset"> Headset <br>
+                    <input type="radio" name="itemType" value="Keyboard" id="Keyboard"> Keyboard <br>
                 </div>
             </div>
-            <button class="btn btn-primary" style="float:right; margin-right:20px;")>Insert Item</button>
+            <button class="btn btn-primary" style="float:right; margin-right:20px; margin-bottom:50px;" id="btn-insert" onclick="insertItem()">Insert Item</button>
+            <div id="btn-update" style="display:none;">
+                <button class="btn btn-warning" style="float:right; margin-right:20px; margin-bottom:50px;")>Update Item</button>
+                <button class="btn btn-danger" style="float:right; margin-right:20px; margin-bottom:50px;" onclick="window.location.reload()">Cancel Update</button>
+            </div>
         </div>
     </div>
 </body>
