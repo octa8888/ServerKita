@@ -5,7 +5,7 @@
 
     include('../database/connect.php');
 
-    $username=$_POST['username'];
+    $username= htmlspecialchars($_POST['username'], ENT_QUOTES,'UTF-8');
     $password=$_POST['password'];
 
     if(empty($username)){
