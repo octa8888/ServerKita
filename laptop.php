@@ -21,6 +21,11 @@
     <div class="container">
         
         <script>
+            var token=`<?php
+                $token=bin2hex(random_bytes(32));
+                $_SESSION['csrfToken']=$token;
+                echo $_SESSION['csrfToken'];
+            ?>`
             $("document").ready(function(){
                 $.ajax({
                     url: "controller/apiStore.php",
@@ -28,7 +33,8 @@
                     type: 'POST',
                     data:{
                         action:'getStoreItems',
-                        type: 'Laptop'
+                        type: 'Laptop',
+                        csrfToken: token
                     },
                     success: function (data){
                         if(data=="Invalid Type"){

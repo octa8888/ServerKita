@@ -1,6 +1,6 @@
 <?php
     include('../database/connect.php');
-
+    
     if(isset($_POST['action'])){
         $userId=$_POST['userId'];
         if($_POST['action']=="addToCart"){

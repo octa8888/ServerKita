@@ -1,7 +1,9 @@
 <?php
     function getStoreData(){
         include('../database/connect.php');
-        if(isset($_POST['action'])){
+        session_start();
+        if(isset($_POST['action'])&&isset($_POST['csrfToken'])&&$_POST['csrfToken']==$_SESSION['csrfToken']){
+            unset($_SESSION['csrfToken']);
             if($_POST['action']=="getStoreItems"){
                 $type=$_POST['type'];
                 $query;

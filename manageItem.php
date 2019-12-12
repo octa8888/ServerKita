@@ -31,13 +31,19 @@
                 </thead>
                     <tbody class="table-body">
                 <script>
+                    var token=`<?php
+                                $token=bin2hex(random_bytes(32));
+                                $_SESSION['csrfToken']=$token;
+                                echo $_SESSION['csrfToken'];
+                            ?>`
                     $.ajax({
                         url: 'controller/apiStore.php',
                         type: 'POST',
                         dataType: 'json',
                         data: {
                             action: 'getStoreItems',
-                            type: 'All'
+                            type: 'All',
+                            csrfToken: token
                         },
                         success: function(data){
                             var html="";

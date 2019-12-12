@@ -20,13 +20,19 @@
     <div class="container">
         <script>
             $("document").ready(function(){
+                var token=`<?php
+                    $token=bin2hex(random_bytes(32));
+                    $_SESSION['csrfToken']=$token;
+                    echo $_SESSION['csrfToken'];
+                ?>`
                 $.ajax({
                     url: "controller/apiStore.php",
                     dataType: 'json',
                     type: 'POST',
                     data:{
                         action:'getStoreItems',
-                        type: 'Mouse'
+                        type: 'Mouse',
+                        csrfToken: token
                     },
                     success: function (data){
                         if(data=="Invalid Type"){
