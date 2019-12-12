@@ -1,8 +1,8 @@
 <?php
 
 include('../database/connect.php');
-
-if(isset($_POST['action'])&&$_POST['action']=="doTransaction"){
+session_start();
+if(isset($_POST['action'])&&$_POST['action']=="doTransaction"&&isset($_POST['csrfToken'])&&$_POST['csrfToken']==$_SESSION['csrfToken']){
     $userId=$_POST['userId'];
     $date=date("Y-m-d H:i:s");
     $query=$con->prepare("INSERT INTO KTransactionHeader(UserId,TransactionDate) VALUES (?,?)");

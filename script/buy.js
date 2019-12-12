@@ -16,13 +16,14 @@ function buyById(itemId, userId){
     });
 }
 
-function doTransaction(customerId){
+function doTransaction(customerId, token){
     $.ajax({
         url: 'controller/transactionController.php',
         type: 'POST',
         data: {
             action: 'doTransaction',
-            userId: customerId
+            userId: customerId,
+            csrfToken: token
         },
         success : function(){
             alert("Success");

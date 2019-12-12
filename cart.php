@@ -65,8 +65,13 @@
                                 `
                             }
                             $('.table-body').html(html);
+                            var token=`<?php
+                                $token=bin2hex(random_bytes(32));
+                                $_SESSION['csrfToken']=$token;
+                                echo $_SESSION['csrfToken'];
+                            ?>`
                             if(data.length>0){
-                                var html = `<button class="btn btn-primary" onclick="doTransaction('<?=$_SESSION['userId']?>')">Buy</button>
+                                var html = `<button class="btn btn-primary" onclick="doTransaction('<?=$_SESSION['userId']?>','${token}')">Buy</button>
                                 <button class="btn btn-danger" onclick="clearCart('<?=$_SESSION['userId']?>')">Cancel</button>`
                                 $('.choose-button').html(html);
                             }
