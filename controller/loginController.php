@@ -1,12 +1,11 @@
 <?php
-    header("X-XSS-Protection: 0");
     if(!isset($_POST['submitBtn'])){
         header("location: ../index.php");
     }
 
     include('../database/connect.php');
 
-    $username= htmlspecialchars($_POST['username'], ENT_QUOTES,'UTF-8');
+    $username= $_POST['username'];
     $password=$_POST['password'];
 
     if(empty($username)){

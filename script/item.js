@@ -23,27 +23,36 @@ function updateItem(itemID,itemName,itemQuantity,itemPrice,itemDescription,itemT
     $('#'+itemType).prop("checked",true);
     $('#btn-insert').css({"display":"none"});
     $('#btn-update').css({"display":"block"});
+    $('#input-file').css({"display":"none"});
 }
 
-function insertItem(){
-    var Name= $('#itemName').val();
-    var Quantity=$('#itemQuantity').val();
-    var Price=$('#itemPrice').val();
-    var Description=$('#itemDescription').val();
-    var Type=$("input[name='itemType']:checked").val();
+function doUpdate(){
+    var itemId=$('#itemId').val();
+    var itemName=$('#itemName').val();
+    var itemQuantity=$('#itemQuantity').val();
+    var itemPrice=$('#itemPrice').val();
+    var itemDescription=$('#itemDescription').val();
+    var itemType=$("input[name='itemType']:checked"). val();
+    console.log(itemId);
+    console.log(itemName);
+    console.log(itemQuantity);
+    console.log(itemPrice);
+    console.log(itemDescription);
+    console.log(itemType);
     $.ajax({
         url: 'controller/itemController.php',
         type: 'POST',
         data: {
-            action: 'insertItem',
-            itemName: Name,
-            itemQuantity: Quantity,
-            itemPrice: Price,
-            itemDescription: Description,
-            itemType: Type
+            action: 'updateItem',
+            itemId: itemId,
+            itemName: itemName,
+            itemQuantity: itemQuantity,
+            itemPrice: itemPrice,
+            itemDescription: itemDescription,
+            itemType: itemType
         },
         success: function(){
-            alert("Success");
+            alert("Update Success");
             window.location.reload();
         }
     })

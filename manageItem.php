@@ -63,7 +63,7 @@
                 </script>
                 </tbody>
             </table>
-            <div>
+            <form action="controller/itemController.php" enctype="multipart/form-data" method="post">
                 <div class="form-group item-id-form" style="display: none;">
                     <label>Item ID:</label>
                     <input type="number" class="form-control" name="itemId" id="itemId" readonly>
@@ -92,10 +92,21 @@
                     <input type="radio" name="itemType" value="Headset" id="Headset"> Headset <br>
                     <input type="radio" name="itemType" value="Keyboard" id="Keyboard"> Keyboard <br>
                 </div>
+                <div id="input-file">
+                    <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="uploadedFile" onchange="getFile(this);">
+                        <label class="custom-file-label">Choose file</label>
+                    </div>
+                </div>
             </div>
-            <button class="btn btn-primary" style="float:right; margin-right:20px; margin-bottom:50px;" id="btn-insert" onclick="insertItem()">Insert Item</button>
+                <button class="btn btn-primary" style="float:right; margin-right:20px; margin:50px 0;" name="btnInsert" value="insert" id="btn-insert">Insert Item</button>
+            </form>
             <div id="btn-update" style="display:none;">
-                <button class="btn btn-warning" style="float:right; margin-right:20px; margin-bottom:50px;")>Update Item</button>
+                <button class="btn btn-warning" style="float:right; margin-right:20px; margin-bottom:50px;" onclick="doUpdate()">Update Item</button>
                 <button class="btn btn-danger" style="float:right; margin-right:20px; margin-bottom:50px;" onclick="window.location.reload()">Cancel Update</button>
             </div>
         </div>
