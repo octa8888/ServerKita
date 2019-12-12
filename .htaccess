@@ -1,1 +1,3 @@
 Options All -Indexes
+php_flag display_errors Off
+ErrorDocument 404 /ServerKita/error/error404.html

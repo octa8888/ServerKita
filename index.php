@@ -1,4 +1,6 @@
-
+<?php
+    include('header.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,10 +53,6 @@ h2{
 
 </style>
 <body>
-    <?php
-        include('header.php');
-    ?>
-
     <div class="main-page">
         <div class="slider-picture">
             <img src="./assets/komputer1.png" class="pic">
